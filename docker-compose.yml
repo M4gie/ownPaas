@@ -1,0 +1,34 @@
+version: "3.7"
+
+services:
+  db-ownpaas:
+    image: postgres:11.2-alpine
+    container_name: db-ownpaas
+    env_file: db-docker-compose.env
+    volumes:
+      - db-ownpaas:/var/lib/postgresql/data
+    networks:
+      - db-ownpaas
+    restart: always
+    ports:
+      - 5432:5432
+  api:
+    build:
+      context: ./API
+      dockerfile: Dockerfile
+    container_name: ownpass-api
+    env_file: api-docker-compose.env
+    restart: always
+    depends_on:
+      - db-ownpaas
+    networks:
+      - db-ownpaas
+    ports:
+      - 3333:3333
+    read_only: false
+
+volumes:
+  db-ownpaas:
+
+networks:
+  db-ownpaas:
