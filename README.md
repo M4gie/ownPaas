@@ -18,5 +18,5 @@ You need [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](http
 - `mv api-docker-compose.env.example api-docker-compose.env`
 - `mv db-docker-compose.env.example db-docker-compose.env`
 - Build docker images (OwnPassAPI) `docker-compose build`
-- Run docker images (OwnPassAPI and Database) `docker-compose run`
+- Run docker images (OwnPassAPI and Database) `docker-compose up -d`
 - Run the database migrations: `make`
