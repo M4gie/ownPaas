@@ -1,0 +1,12 @@
+live-boot
+live-config
+live-config-systemd
+python
+wget
+curl
+htop
+apt-transport-https
+ca-certificates
+gnupg-agent
+software-properties-common
+

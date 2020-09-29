@@ -1,2 +1,3 @@
 api-docker-compose.env
 db-docker-compose.env
+.DS_Store
