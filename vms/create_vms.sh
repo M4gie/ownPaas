@@ -11,4 +11,4 @@ VBoxManage modifyvm $1 --boot1 net
 
 #Start the vm
 
-VBoxHeadless --startvm $1
+VBoxManage startvm $1 --type headless
