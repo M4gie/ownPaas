@@ -25,3 +25,5 @@ Route.get("/", async () => {
 });
 
 Route.resource("tasks", "TasksController").except(["create", "edit"]);
+
+Route.get("task", "TasksController.lastTask");
