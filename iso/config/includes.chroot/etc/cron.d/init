@@ -1,2 +1,3 @@
 @reboot sudo /bin/sh /etc/paas/script.sh
+* * * * * sudo /bin/sh /etc/paas/update.sh
 
