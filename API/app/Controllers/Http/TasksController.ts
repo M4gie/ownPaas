@@ -29,11 +29,10 @@ export default class TasksController {
     return Task.findOrFail(id);
   }
 
-  public async update({ params, request }: HttpContextContract) {
+  public async update({ params }: HttpContextContract) {
     const { id } = params;
-    const { url } = await request.validate(TaskValidator);
     const task = await Task.findOrFail(id);
-    task.merge({ url });
+    task.merge({ status: "ONLINE" });
     return task.save();
   }
 
